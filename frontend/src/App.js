@@ -20,7 +20,7 @@ class App extends Component {
           <KailotusListing/>
         </div>
         <nav className="navbar is-fixed-bottom">
-        <div className="centered-input">
+        <div className="flex-display-with-min-height-325">
           <InputKailotus/>
         </div>
         </nav>

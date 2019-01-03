@@ -31,9 +31,8 @@
   }
 }
 
-.centered-input {
-  align-items: stretch;
-  display: inline;
+.flex-display-with-min-height-325 {
+  display: flex;
+  flex:0 0 100%;
   min-height: 3.25rem;
-  width: 100%;
 }
