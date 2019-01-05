@@ -2,9 +2,40 @@ import React, { Component } from 'react';
 import './App.css';
 import KailotusListing from './components/kailotus/KailotusListing';
 import InputKailotus from './components/input/InputKailotus';
+import Kailotus from './components/kailotus/Kailotus';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.initialState = {
+      kailotusArray: []
+    }
+
+    this.state = this.initialState;
+  }
+
+  handleSubmit = submittedKailotusText => {
+    this.pushKailotusToArray(submittedKailotusText.kailotusText);
+  }
+
+  pushKailotusToArray(kailotusText) {
+    const {kailotusArray} = this.state;
+    kailotusArray.push(
+      <div className="columns">
+        <div className="column">
+          <Kailotus kailotusData={kailotusText} />
+        </div>
+      </div>
+    );
+    this.setState({
+      kailotusArray : kailotusArray
+    });
+  }
+
   render() {
+    const {kailotusArray} = this.state;
     return (
       <div>
         <div className="hero">
@@ -17,11 +48,11 @@ class App extends Component {
           </div>
         </div>
         <div className="container">
-          <KailotusListing/>
+          <KailotusListing kailotusArray={kailotusArray}/>
         </div>
         <nav className="navbar is-fixed-bottom">
         <div className="flex-display-with-min-height-325">
-          <InputKailotus/>
+          <InputKailotus handleSubmit={this.handleSubmit}/>
         </div>
         </nav>
       </div>
