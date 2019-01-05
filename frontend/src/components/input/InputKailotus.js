@@ -13,7 +13,8 @@ class InputKailotus extends Component {
     this.state = this.initialState;
   }
 
-  submitKailotus = () => {
+  submitKailotus = event => {
+    event.preventDefault();
     this.props.handleSubmit(this.state);
     this.setState(this.initialState);
   }
@@ -30,7 +31,7 @@ class InputKailotus extends Component {
     const {kailotusText} = this.state;
 
     return(
-      <form className="full-width" onSubmit="event.preventDefault();">
+      <form className="full-width" onSubmit={this.submitKailotus}>
         <div className="field has-addons has-addons-centered">
           <p className="control">
             <input

@@ -23,11 +23,7 @@ class App extends Component {
   pushKailotusToArray(kailotusText) {
     const {kailotusArray} = this.state;
     kailotusArray.push(
-      <div className="columns">
-        <div className="column">
-          <Kailotus kailotusData={kailotusText} />
-        </div>
-      </div>
+      <Kailotus kailotusData={kailotusText} />
     );
     this.setState({
       kailotusArray : kailotusArray
@@ -48,7 +44,9 @@ class App extends Component {
           </div>
         </div>
         <div className="container">
-          <KailotusListing kailotusArray={kailotusArray}/>
+          <div className="columns">
+            <KailotusListing kailotusArray={kailotusArray}/>
+          </div>
         </div>
         <nav className="navbar is-fixed-bottom">
         <div className="flex-display-with-min-height-325">
