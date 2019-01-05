@@ -23,11 +23,19 @@ class App extends Component {
   pushKailotusToArray(kailotusText) {
     const {kailotusArray} = this.state;
     kailotusArray.push(
-      <Kailotus kailotusData={kailotusText} />
+      <Kailotus x={this.randomX()} y={this.randomY()} kailotusData={kailotusText} />
     );
     this.setState({
       kailotusArray : kailotusArray
     });
+  }
+
+  randomX() {
+    return Math.random() * 500;
+  }
+
+  randomY() {
+    return Math.random() * 500;
   }
 
   render() {
@@ -44,9 +52,7 @@ class App extends Component {
           </div>
         </div>
         <div className="container">
-          <div className="columns">
-            <KailotusListing kailotusArray={kailotusArray}/>
-          </div>
+          <KailotusListing kailotusArray={kailotusArray}/>
         </div>
         <nav className="navbar is-fixed-bottom">
         <div className="flex-display-with-min-height-325">

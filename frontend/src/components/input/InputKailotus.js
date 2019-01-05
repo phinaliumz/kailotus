@@ -7,7 +7,7 @@ class InputKailotus extends Component {
     super(props);
 
     this.initialState = {
-      kailotusText : ''
+      kailotusText: ''
     }
 
     this.state = this.initialState;
