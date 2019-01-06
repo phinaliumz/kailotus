@@ -6,6 +6,8 @@ import Kailotus from './components/kailotus/Kailotus';
 
 class App extends Component {
 
+  static coordinateMultiplierForDrawing = 0.85;
+
   constructor(props) {
     super(props);
 
@@ -23,25 +25,29 @@ class App extends Component {
   pushKailotusToArray(kailotusText) {
     const {kailotusArray} = this.state;
     kailotusArray.push(
-      <Kailotus x={this.randomX()} y={this.randomY()} kailotusData={kailotusText} />
+      <Kailotus x={this.randomX(
+        document.getElementById('kailotus-listing').clientWidth
+        )} y={this.randomY(
+        document.getElementById('kailotus-listing').clientHeight
+          )} kailotusData={kailotusText} />
     );
     this.setState({
       kailotusArray : kailotusArray
     });
   }
 
-  randomX() {
-    return Math.random() * 500;
+  randomX(screenWidth) {
+    return Math.random() * (screenWidth * App.coordinateMultiplierForDrawing);
   }
 
-  randomY() {
-    return Math.random() * 500;
+  randomY(screenHeight) {
+    return Math.random() * (screenHeight * App.coordinateMultiplierForDrawing);
   }
 
   render() {
     const {kailotusArray} = this.state;
     return (
-      <div>
+      <div className="full-height-container">
         <div className="hero">
           <div className="hero-body">
             <div className="container">
@@ -51,7 +57,7 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <div className="container">
+        <div id="kailotus-listing" className="container is-fluid borders is-full-height-kailotus-container">
           <KailotusListing kailotusArray={kailotusArray}/>
         </div>
         <nav className="navbar is-fixed-bottom">
