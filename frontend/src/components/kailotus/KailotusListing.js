@@ -1,41 +1,17 @@
 import React, { Component } from 'react';
-import Kailotus from './Kailotus';
+import './KailotusListing.css';
 
 class KailotusListing extends Component {
-    render() {
-      return (
-        <div className="tile is-ancestor is-vertical">
-          <div className="columns">
-            <div className="column">
-              <Kailotus kailotusData="Eka!"/>
-            </div>
-            <div className="column">
-              <Kailotus kailotusData="Toka!"/>
-            </div>
-            <div className="column">
-              <Kailotus kailotusData="Kolmas!"/>
-            </div>
-            <div className="column">
-              <Kailotus kailotusData="Neljäs!"/>
-            </div>
-          </div>
-          <div className="columns">
-            <div className="column">
-              <Kailotus kailotusData="Viides!"/>
-            </div>
-            <div className="column">
-              <Kailotus kailotusData="Kuudes!"/>
-            </div>
-            <div className="column">
-              <Kailotus kailotusData="Seitsemäs!"/>
-            </div>
-            <div className="column">
-              <Kailotus kailotusData="Kahdeksas!"/>
-            </div>
-          </div>
-        </div>
-      );
-    }
+
+  render() {
+    return (
+      <div className="full-height-container">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          {this.props.kailotusArray}
+        </svg>
+      </div>
+    );
+  }
 }
 
 export default KailotusListing;

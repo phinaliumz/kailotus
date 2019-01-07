@@ -31,9 +31,22 @@
   }
 }
 
-.centered-input {
-  align-items: stretch;
-  display: inline;
+.flex-display-with-min-height-325 {
+  display: flex;
+  flex:0 0 100%;
   min-height: 3.25rem;
-  width: 100%;
+}
+
+.borders {
+  border: 1px solid #000000;
+}
+
+.full-height-container {
+  height: 100%;
+  min-height: 100%;
+}
+
+.is-full-height-kailotus-container {
+  height: 76.5%;
+  min-height: 76.5%;
 }
