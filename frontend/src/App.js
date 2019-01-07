@@ -37,33 +37,29 @@ class App extends Component {
   }
 
   randomX(screenWidth) {
-    return Math.random() * (screenWidth * App.coordinateMultiplierForDrawing);
+    return Math.random() * (screenWidth);
   }
 
   randomY(screenHeight) {
-    return Math.random() * (screenHeight * App.coordinateMultiplierForDrawing);
+    return Math.random() * (screenHeight);
   }
 
   render() {
     const {kailotusArray} = this.state;
     return (
       <div className="full-height-container">
-        <div className="hero">
-          <div className="hero-body">
-            <div className="container">
-              <h1 className="title">
-                kailotus.fi
-              </h1>
-            </div>
-          </div>
+        <div className="kailotus-title-bar">
+          <h1 className="title">
+            kailotus.fi
+          </h1>
         </div>
-        <div id="kailotus-listing" className="container is-fluid borders is-full-height-kailotus-container">
+        <div id="kailotus-listing" className="is-full-height-kailotus-container">
           <KailotusListing kailotusArray={kailotusArray}/>
         </div>
-        <nav className="navbar is-fixed-bottom">
-        <div className="flex-display-with-min-height-325">
-          <InputKailotus handleSubmit={this.handleSubmit}/>
-        </div>
+        <nav className="kailotus-navbar">
+          <div className="kailotus-input-field">
+            <InputKailotus handleSubmit={this.handleSubmit}/>
+          </div>
         </nav>
       </div>
     );

@@ -37,16 +37,30 @@
   min-height: 3.25rem;
 }
 
-.borders {
-  border: 1px solid #000000;
+.full-height-container {
+  height: 99.5%;
+  min-height: 99.5%;
 }
 
-.full-height-container {
+.is-full-height-kailotus-container {
   height: 100%;
   min-height: 100%;
 }
 
-.is-full-height-kailotus-container {
-  height: 76.5%;
-  min-height: 76.5%;
+.kailotus-title-bar {
+	width: 95%;
+	position: absolute;
+	left: 2.5em;
+	top: 0.5em;
+}
+
+.kailotus-input-field {
+  width: 100%;
+}
+
+.kailotus-navbar {
+  width: 27%;
+  position: absolute;
+  left: 38em;
+  bottom: 1.5em;
 }
