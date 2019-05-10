@@ -13,14 +13,14 @@ class App extends Component {
 
     this.initialState = {
       kailotusArray: []
-    }
+    };
 
     this.state = this.initialState;
   }
 
   handleSubmit = submittedKailotusText => {
     this.pushKailotusToArray(submittedKailotusText.kailotusText);
-  }
+  };
 
   pushKailotusToArray(kailotusText) {
     const {kailotusArray} = this.state;

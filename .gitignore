@@ -21,3 +21,6 @@ frontent/.env.production.local
 frontent/npm-debug.log*
 frontent/yarn-debug.log*
 frontent/yarn-error.log*
+
+# IntelliJ
+.idea/
